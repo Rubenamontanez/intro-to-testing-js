@@ -18,12 +18,21 @@ describe('helloWorld', function() {
 
 describe('sayHello', function() {
     it('this is the label for this test', function() {
-        expect(typeof sayHello).toBeDefined('function');
+        expect(typeof sayHello).toBe('function');
     });
-//     it('to be', function() {
-//         expect(test).toBe(true);
-//     });
-//     it('not to be', function() {
-//         expect(test).not.toBe(false);
-//     });
+    it('should return a string when called', function() {
+        expect(typeof sayHello()).toBe( 'string');
+    });
+    it('should return the string "Hello, Jane!" when executed', function() {
+        expect(sayHello("Jane")).toBe( "Hello, Jane!");
+    });
+    it('should return the string "Hello, Alex!" when executed',function () {
+        expect(sayHello("Alex")).toBe('Hello, Alex!');
+    });
+    it('should return the string "Hello, Pat!" when executed',function () {
+        expect(sayHello("Pat")).toBe('Hello, Pat!');
+    })
+    // it('not to be', function() {
+    //     expect(test).not.toBe(false);
+    // });
 });
